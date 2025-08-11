@@ -1,7 +1,5 @@
-// src/pages/PlaceholderContent.tsx
 import React from 'react';
 
-// A generic placeholder for pages that haven't been built yet.
 
 interface PlaceholderProps {
   title: string;

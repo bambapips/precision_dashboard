@@ -1,9 +1,7 @@
-// src/components/Header.tsx
 import React from 'react';
 import { menuItems, administrationItems } from '../data/navigation';
 import { SettingsIcon } from '../assets/icons/Icon';
 
-// The header for mobile view, containing the hamburger menu and user info.
 
 interface HeaderProps {
   toggleSidebar: () => void;

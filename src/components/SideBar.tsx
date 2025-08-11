@@ -1,10 +1,7 @@
-// src/components/Sidebar.tsx
 import React from 'react';
 import NavLink from './NavLink';
 import { menuItems, administrationItems } from '../data/navigation';
 import { SignOutIcon } from '../assets/icons/Icon';
-
-// The main sidebar component, which composes NavLink components.
 
 interface SidebarProps {
   isOpen: boolean;

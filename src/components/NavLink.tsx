@@ -1,9 +1,7 @@
-// src/components/NavLink.tsx
 import React, { useState } from 'react';
 import type { NavItem } from '../type/types';
 import { ChevronDownIcon } from '../assets/icons/Icon';
 
-// A reusable component for individual navigation links, handling active states and dropdowns.
 
 interface NavLinkProps {
   item: NavItem;
@@ -23,7 +21,7 @@ const NavLink: React.FC<NavLinkProps> = ({ item, activePath, onClick }) => {
   };
   
   const handleChildClick = (e: React.MouseEvent, path: string) => {
-      e.stopPropagation(); // Prevent parent link's onClick from firing
+      e.stopPropagation(); 
       onClick(path);
   };
 
