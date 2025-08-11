@@ -1,6 +1,6 @@
 import React from 'react';
 import { SettingsIcon, FilterIcon, SearchIcon } from '../assets/icons/Icon';
-import { DataTableDemo } from '@/components/Table';
+// import { DataTableDemo } from '@/components/Table';
 import noPromptImage from '../assets/images/empty-box 1.png'
 
 const PromptsPage: React.FC = () => {

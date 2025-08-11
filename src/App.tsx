@@ -43,7 +43,9 @@ const App: React.FC = () => {
     <div className="h-screen w-full relative lg:flex bg-gray-100">
       <Sidebar isOpen={sidebarOpen} activePath={activePath} setPath={setActivePath} />
       <div className="flex-1 w-full flex flex-col overflow-hidden">
-        <Header toggleSidebar={toggleSidebar} breadcrumbs={getBreadcrumbs()} />
+        <Header toggleSidebar={toggleSidebar} 
+        //breadcrumbs={getBreadcrumbs()}
+         />
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-white">
           {renderContent()}
         </main>

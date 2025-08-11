@@ -1,15 +1,15 @@
 import React from 'react';
-import { menuItems, administrationItems } from '../data/navigation';
-import { SettingsIcon } from '../assets/icons/Icon';
+// import { menuItems, administrationItems } from '../data/navigation';
+// import { SettingsIcon } from '../assets/icons/Icon';
 
 
 interface HeaderProps {
   toggleSidebar: () => void;
-  breadcrumbs: string[];
+//   breadcrumbs: string[];
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleSidebar, breadcrumbs }) => {
-    const CurrentIcon = [...menuItems, ...administrationItems].find(item => item.label === breadcrumbs[0])?.icon || SettingsIcon;
+const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
+    // const CurrentIcon = [...menuItems, ...administrationItems].find(item => item.label === breadcrumbs[0])?.icon || SettingsIcon;
     return (
         <header className="lg:bg-white bg-[#F5F9FF] shadow-sm py-4 px-6 flex items-center justify-between lg:hidden">
             <div className="flex items-center">
