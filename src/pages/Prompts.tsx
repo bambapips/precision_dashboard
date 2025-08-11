@@ -1,7 +1,7 @@
 import React from 'react';
 import { SettingsIcon, FilterIcon, SearchIcon } from '../assets/icons/Icon';
-import Table  from '../components/Table';
-// import noPromptImage from '../assets/images/empty-box 1.png'
+import { DataTableDemo } from '@/components/Table';
+import noPromptImage from '../assets/images/empty-box 1.png'
 
 const PromptsPage: React.FC = () => {
     return (
@@ -43,7 +43,7 @@ const PromptsPage: React.FC = () => {
                     </div>
                 </div>
 
-                {/* <div className="h-full px-6 py-4 flex flex-col justify-center items-center rounded-lg">
+                <div className="h-full px-6 py-4 flex flex-col justify-center items-center rounded-lg">
                     <div className="w-40 h-40">
                         <img className="w-full h-full object-contain" src={noPromptImage} />
                     </div>
@@ -52,8 +52,8 @@ const PromptsPage: React.FC = () => {
                     <button className="mt-6 bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
                         New prompt
                     </button>
-                </div> */}
-                <Table/>
+                </div>
+                {/* <DataTableDemo/> */}
             </div>
         </div>
     );
