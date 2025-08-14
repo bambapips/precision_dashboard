@@ -120,39 +120,43 @@ const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
 
     return (
         <div className="border bg-[#EAECF0] border-gray-200 rounded-lg mb-3">
-            <div className="p-4 flex items-start gap-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-                <div className="text-sm font-medium border-1 border-[#DFDEFF] text-gray-500 px-3 py-1 rounded-md">{prompt.id}</div>
+            <div className="p-4 flex items-center gap-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                <div className="text-[12px] font-medium border-1 border-[#DFDEFF] text-gray-500 p-2 rounded-md">{prompt.id}</div>
                 <div className="flex-1">
                     <div className="flex justify-between items-center">
                         <div>
                             <p className="font-semibold text-[14px] text-gray-800">{prompt.title}</p>
-                            <p className="lg:text-sm  text-[14px] text-gray-500">{prompt.contentPreview}</p>
+                            <p className="lg:text-sm  text-[14px] text-gray-500">{prompt.contentPreview.substring(0, 20) + "..." + "\""}</p>
                         </div>
-                        <div className="flex items-center gap-2 mt-1">
-                            <span className={`h-2 w-2 rounded-full ${dot}`}></span>
-                            <span className={`text-sm font-medium ${text}`}>{prompt.status}</span>
-                        </div>
+
                     </div>
                 </div>
-                {isOpen ? <ChevronUp className="h-5 w-5 text-gray-500" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
+                <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1">
+                        <span className={`h-2 w-2 rounded-full ${dot}`}></span>
+                        <span className={`text-sm font-medium ${text}`}>{prompt.status}</span>
+                    </div>
+                    {isOpen ? <ChevronUp className="h-5 w-5 text-gray-500" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
+                </div>
             </div>
             {isOpen && (
                 <div className="p-4 border-t border-gray-200">
+                    <hr className="bg-[#EAECF0]"/>
                     <div className="space-y-2 text-sm text-gray-600 mb-4">
                         <div className="flex justify-between"><span>Audience:</span> <span className="font-medium text-gray-800">{prompt.targetAudience}</span></div>
                         <div className="flex justify-between"><span>Created By:</span> <span className="font-medium text-gray-800">{prompt.createdBy}</span></div>
                         <div className="flex justify-between"><span>Date Created:</span> <span className="font-medium text-gray-800">{prompt.createdOn}</span></div>
                     </div>
                     <div className="flex justify-between w-full gap-2">
-                        <Button className="bg-transparent shadow-none text-black">
-                            <Trash2 className="h-4 w-4 mr-2" /> Delete
+                        <Button className="bg-transparent shadow-none  text-[12px] text-black">
+                            <Trash2 className="h-3 w-3" /> Delete
                         </Button>
                         <div className="flex gap-2">
-                            <Button variant="outline" className="">
-                                <Eye className="h-4 w-4 mr-2" /> Preview
+                            <Button variant="outline" className="text-[12px]">
+                                <Eye className="h-3 w-3" /> Preview
                             </Button>
-                            <Button className="bg-[#605BFF]">
-                                <Edit className="h-4 w-4 mr-2" /> Edit
+                            <Button className="bg-[#605BFF] text-[12px]">
+                                <Edit className="h-3 w-3" /> Edit
                             </Button>
                         </div>
                     </div>
