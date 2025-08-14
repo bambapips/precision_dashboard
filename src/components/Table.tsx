@@ -212,7 +212,7 @@ export function DataTableDemo() {
               Columns <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="w-[--radix-dropdown-menu-trigger-width]">
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())

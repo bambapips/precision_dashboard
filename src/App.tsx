@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useState } from 'react';
 import Sidebar from './components/SideBar';
 import Header from './components/Header';
@@ -11,8 +10,20 @@ const App: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activePath, setActivePath] = useState('/settings/prompts');
 
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+  };
+
+  const handleSetPath = (path: string) => {
+    setActivePath(path);
+    // Close sidebar on mobile when a link is clicked
+    if (sidebarOpen) {
+      closeSidebar();
+    }
   };
 
   const getBreadcrumbs = (): string[] => {
@@ -40,13 +51,22 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-full relative lg:flex bg-gray-100">
-      <Sidebar isOpen={sidebarOpen} activePath={activePath} setPath={setActivePath} />
-      <div className="flex-1 w-full flex flex-col overflow-hidden">
+    <div className="h-screen w-full h-full relative lg:flex bg-gray-100">
+      {/* Overlay for mobile to close sidebar on outside click */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 z-10 lg:hidden"
+          onClick={closeSidebar}
+          aria-hidden="true"
+        />
+      )}
+      
+      <Sidebar isOpen={sidebarOpen} activePath={activePath} setPath={handleSetPath} />
+      <div className="flex-1 w-full h-full flex flex-col overflow-hidden">
         <Header toggleSidebar={toggleSidebar} 
         //breadcrumbs={getBreadcrumbs()}
          />
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-white">
+        <main className="flex-1 h-full overflow-x-hidden overflow-y-auto bg-white">
           {renderContent()}
         </main>
       </div>
